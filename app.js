@@ -1,3 +1,4 @@
+"use strict";
 const menu = [
   {
     id: 1,
@@ -82,7 +83,7 @@ const menu = [
 ];
 
 const sectionCenter = document.querySelector(".section-items");
-// const btnContainer = document.querySelector(".btn-container");
+const btnContainer = document.querySelector(".section-menu-buttons");
 
 function article(item) {
   return `<article class="menu-item">
@@ -97,10 +98,11 @@ function article(item) {
   </article>`;
 }
 
-// function buttons(menuCategory) {
-//   return `<button class="filter-btn" type="button" data-id=${menuCategory}>${menuCategory}</button>
-//     `;
-// }
+function buttons(menuCategory) {
+  return `<button class="category-btn {
+    " type="button" data-id=${menuCategory}>${menuCategory}</button>
+    `;
+}
 
 const displayMenuItems = function (menuItems, category) {
   let displayMenu = menuItems.map(function (item) {
@@ -111,28 +113,28 @@ const displayMenuItems = function (menuItems, category) {
   sectionCenter.innerHTML = displayMenu;
 };
 
-// const displayButtons = function (menu) {
-//   const categorys = menu.reduce(
-//     function (values, item) {
-//       if (!values.includes(item.category)) values.push(item.category);
-//       return values;
-//     },
-//     ["all"]
-//   );
-//   let categoryBtns = categorys.map(function (category) {
-//     return buttons(category);
-//   });
+const displayButtons = function (menu) {
+  const categorys = menu.reduce(
+    function (values, item) {
+      if (!values.includes(item.category)) values.push(item.category);
+      return values;
+    },
+    ["all"]
+  );
+  let categoryBtns = categorys.map(function (category) {
+    return buttons(category);
+  });
 
-//   categoryBtns = categoryBtns.join("");
-//   btnContainer.innerHTML = categoryBtns;
-//   const btns = document.querySelectorAll(".filter-btn");
-//   btns.forEach(function (btn) {
-//     btn.addEventListener("click", function (e) {
-//       const category = e.currentTarget.dataset.id;
-//       displayMenuItems(menu, category);
-//     });
-//   });
-// };
+  categoryBtns = categoryBtns.join("");
+  btnContainer.innerHTML = categoryBtns;
+  const btns = document.querySelectorAll(".category-btn");
+  btns.forEach(function (btn) {
+    btn.addEventListener("click", function (e) {
+      const category = e.currentTarget.dataset.id;
+      displayMenuItems(menu, category);
+    });
+  });
+};
 
 window.addEventListener("DOMContentLoaded", displayMenuItems(menu, "all"));
 window.addEventListener("DOMContentLoaded", displayButtons(menu));
