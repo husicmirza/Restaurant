@@ -104,10 +104,10 @@ function buttons(menuCategory) {
     `;
 }
 
-const displayMenuItems = function (menuItems, category) {
-  let displayMenu = menuItems.map(function (item) {
-    if (item.category === category) return article(item);
-    else if (category === "all") return article(item);
+const displayMenuItems = function (menu, category) {
+  let displayMenu = menu.map(function (menuItem) {
+    if (menuItem.category === category) return article(menuItem);
+    else if (category === "all") return article(menuItem);
   });
   displayMenu = displayMenu.join("");
   sectionCenter.innerHTML = displayMenu;
@@ -115,8 +115,8 @@ const displayMenuItems = function (menuItems, category) {
 
 const displayButtons = function (menu) {
   const categorys = menu.reduce(
-    function (values, item) {
-      if (!values.includes(item.category)) values.push(item.category);
+    function (values, menuItem) {
+      if (!values.includes(menuItem.category)) values.push(menuItem.category);
       return values;
     },
     ["all"]
@@ -138,3 +138,10 @@ const displayButtons = function (menu) {
 
 window.addEventListener("DOMContentLoaded", displayMenuItems(menu, "all"));
 window.addEventListener("DOMContentLoaded", displayButtons(menu));
+
+// const arr = ["all"];
+// for (let i = 0; i < menu.length; i++) {
+//   const { category } = menu[i];
+//   if (!arr.includes(category)) arr.push(category);
+// }
+// console.log(arr);

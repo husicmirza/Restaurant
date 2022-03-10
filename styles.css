@@ -1,5 +1,6 @@
 * {
   margin: 0;
+  padding: 0;
   font-family: "Loto", sans-serif;
 }
 
@@ -23,9 +24,7 @@ ul {
 li {
   margin: 0 1em;
 }
-section {
-  padding: 3em;
-}
+
 span {
   font-family: "Lobster Two", cursive;
   color: #4f7942;
@@ -37,9 +36,9 @@ footer {
   box-shadow: 0px -10px 20px rgba(189, 189, 189, 0.74);
 }
 .container {
-  /* border: 2px solid black; */
+  border: 2px solid black;
 }
-
+/* <--- HEADER & NAVIGATION ---> */
 .nav-header {
   padding: 5em;
   background-image: linear-gradient(
@@ -61,7 +60,7 @@ footer {
   justify-content: space-evenly;
   padding: 0.5em 0;
   max-width: 900px;
-  margin: 0 auto;
+  margin: 2em auto;
 }
 
 .nav-logo h3 {
@@ -98,7 +97,7 @@ footer {
   max-width: 900px;
   margin: 5.5em auto;
   margin-bottom: 0;
-  padding: 5em;
+  padding: 5em 0;
   text-align: center;
 }
 .header-content-title {
@@ -110,15 +109,49 @@ footer {
 }
 
 .header-content h2 {
-  font-family: "Dancing Script", cursive;
   font-size: 2rem;
-  color: rgb(0, 0, 0);
-  text-shadow: 1px 1px #ffffff;
-
+  color: rgb(255, 255, 255);
   letter-spacing: 5px;
 }
 
+/*---- ABOUT US SECTION ----- */
+.section-about-us {
+  max-width: 1200px;
+  margin: 0em auto;
+  padding: 1em;
+  display: flex;
+  background: rgba(255, 255, 255, 0.432);
+}
+.about-us-desc {
+  width: 50%;
+}
+.about-us-img-container {
+  width: 50%;
+  display: flex;
+  align-items: center;
+}
+.first-two-imgs,
+.second-two-imgs {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+}
+
+.img-box {
+  padding: 0.3em;
+}
+.img-box img {
+  width: 100%;
+  height: 100%;
+}
+
 /* MENU */
+
+.menu {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1em;
+}
 .section-title {
   text-align: center;
   font-size: 2rem;
