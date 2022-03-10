@@ -61,6 +61,7 @@ footer {
   padding: 0.5em 0;
   max-width: 900px;
   margin: 2em auto;
+  max-width: 1000px;
 }
 
 .nav-logo h3 {
@@ -115,20 +116,36 @@ footer {
 }
 
 /*---- ABOUT US SECTION ----- */
-.section-about-us {
-  max-width: 1200px;
-  margin: 0em auto;
-  padding: 1em;
+
+.section-container-about-us {
+  max-width: 1000px;
+  margin: 2em auto 0;
+  background: rgba(177, 177, 177, 0.336);
+  border-radius: 10px;
+  border-top-left-radius: 150px;
+  border-bottom-right-radius: 50px;
   display: flex;
-  background: rgba(255, 255, 255, 0.432);
 }
 .about-us-desc {
   width: 50%;
+  border-top-left-radius: 150px;
+  padding: 5em;
+  color: #ffffff;
 }
+.about-us-desc h1 {
+  font-family: "Lobster Two", cursive;
+  color: #4f7942;
+  font-size: 2.5rem;
+}
+
 .about-us-img-container {
   width: 50%;
   display: flex;
   align-items: center;
+  padding: 2em;
+  background: rgba(177, 177, 177, 0.418);
+  border-bottom-right-radius: 50px;
+  border-top-right-radius: 10px;
 }
 .first-two-imgs,
 .second-two-imgs {
@@ -144,12 +161,18 @@ footer {
   width: 100%;
   height: 100%;
 }
+.box3 {
+  border-top-right-radius: 10px;
+}
+.box4 {
+  border-bottom-right-radius: 50px;
+}
 
 /* MENU */
 
 .menu {
-  max-width: 1200px;
-  margin: 0 auto;
+  max-width: 1000px;
+  margin: 2em auto 0;
   padding: 1em;
 }
 .section-title {
