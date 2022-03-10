@@ -265,3 +265,16 @@ footer {
   font-size: 0.9rem;
   font-weight: 300;
 }
+/* MAP */
+.section-map iframe {
+  width: 100%;
+  height: 450px;
+  border: 0;
+  load
+}
+
+/* FOOTER */
+.footer-img img {
+  display: block;
+  margin: 0 auto;
+}
