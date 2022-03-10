@@ -149,6 +149,8 @@ window.addEventListener("DOMContentLoaded", displayButtons(menu));
 //   if (!arr.includes(category)) arr.push(category);
 // }
 // console.log(arr);
+let listOfReservation = [];
+
 class Reservation {
   constructor(guestName, numOfGuests, date, time) {
     this.guestName = guestName;
@@ -156,9 +158,10 @@ class Reservation {
     this.date = date;
     this.time = time;
   }
+  addToList() {
+    listOfReservation.push(this);
+  }
 }
-
-let listOfReservation = [];
 
 const submitBtn = document.getElementById("submitBtn");
 submitBtn.addEventListener("click", function () {
@@ -168,8 +171,7 @@ submitBtn.addEventListener("click", function () {
     date.value,
     time.value
   );
-  listOfReservation.push(reservation);
-  console.log(reservation);
+  reservation.addToList();
   alert(`${guestName.value} your reservation is confirmed`);
   resetValues();
 });
