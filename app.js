@@ -84,6 +84,10 @@ const menu = [
 
 const sectionCenter = document.querySelector(".section-items");
 const btnContainer = document.querySelector(".section-menu-buttons");
+const guestName = document.getElementById("guestName");
+const numOfGuests = document.getElementById("numOfGuests");
+const date = document.getElementById("date");
+const time = document.getElementById("time");
 
 function article(item) {
   return `<article class="menu-item">
@@ -145,3 +149,34 @@ window.addEventListener("DOMContentLoaded", displayButtons(menu));
 //   if (!arr.includes(category)) arr.push(category);
 // }
 // console.log(arr);
+class Reservation {
+  constructor(guestName, numOfGuests, date, time) {
+    this.guestName = guestName;
+    this.numOfGuests = numOfGuests;
+    this.date = date;
+    this.time = time;
+  }
+}
+
+let listOfReservation = [];
+
+const submitBtn = document.getElementById("submitBtn");
+submitBtn.addEventListener("click", function () {
+  let reservation = new Reservation(
+    guestName.value,
+    numOfGuests.value,
+    date.value,
+    time.value
+  );
+  listOfReservation.push(reservation);
+  console.log(reservation);
+  alert(`${guestName.value} your reservation is confirmed`);
+  resetValues();
+});
+
+function resetValues() {
+  guestName.value = "";
+  numOfGuests.value = "";
+  date.value = "";
+  time.value = "";
+}

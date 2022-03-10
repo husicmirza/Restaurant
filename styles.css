@@ -303,7 +303,8 @@ footer {
   display: flex;
   flex-direction: column;
   padding: 1em;
+  width: 70%;
 }
 .reservation-input input {
-  width: 70%;
+  padding: 1em;
 }
