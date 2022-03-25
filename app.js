@@ -158,7 +158,7 @@ class Reservation {
     this.date = date;
     this.time = time;
   }
-  addToList() {
+  addReservationToList() {
     listOfReservation.push(this);
   }
 }
@@ -171,7 +171,7 @@ submitBtn.addEventListener("click", function () {
     date.value,
     time.value
   );
-  reservation.addToList();
+  reservation.addReservationToList();
   alert(`${guestName.value} your reservation is confirmed`);
   resetValues();
 });
