@@ -149,6 +149,9 @@ window.addEventListener("DOMContentLoaded", displayButtons(menu));
 //   if (!arr.includes(category)) arr.push(category);
 // }
 // console.log(arr);
+
+// RESERVATION FORM
+
 let listOfReservation = [];
 
 class Reservation {
@@ -182,3 +185,19 @@ function resetValues() {
   date.value = "";
   time.value = "";
 }
+
+// Geolocation API
+
+const coords = [44.53090562961278, 18.690734115437614];
+var map = L.map("map").setView(coords, 15);
+
+L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+  attribution:
+    '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+}).addTo(map);
+
+L.marker(coords)
+  .addTo(map)
+  .bindPopup()
+  .setPopupContent("Welcome to our restaurant")
+  .openPopup();
